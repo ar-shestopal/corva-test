@@ -8,8 +8,13 @@ body = {
   ]
 }
 
-response = HTTParty.post('http://localhost:3000/compute/123456.json',
+host = 'https://warm-waters-43210.herokuapp.com'
+
+# Uncomemnt to test in development environment
+# host = 'http://localhost:3000'
+
+response = HTTParty.post("#{host}/compute/123456",
   body: body.to_json,
   :headers => { 'Accept' => 'application/json', 'Content-Type' => 'application/json' })
 
-puts response.body
+pp response.body
