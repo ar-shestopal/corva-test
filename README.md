@@ -49,7 +49,8 @@ Output:
     It will send request to  application deployed on Heroku
     
     Example: 
-    ```corva-test (master) $ ruby test_client.rb 
+    ```
+     corva-test (master) $ ruby test_client.rb 
      "{\"request_id\":\"123456\",\"timestamp\":1493758596,\"title\":\"Result\",\"result\":[-6,0,4,3,-7,5]}"
      ```
     
