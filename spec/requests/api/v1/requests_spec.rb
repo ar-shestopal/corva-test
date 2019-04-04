@@ -54,12 +54,12 @@ RSpec.describe 'API::V1::Requests', :type => :request do
 
         it_behaves_like 'request with invalid params', :title
       end
-    end
 
-    context 'no values in data item' do
-      let(:params) { { timestamp: '1234567', data: [ { title: 'Title1' } ] } }
+      context 'no values in data item' do
+        let(:params) { { timestamp: '1234567', data: [ { title: 'Title1' } ] } }
 
-      it_behaves_like 'request with invalid params', :values
+        it_behaves_like 'request with invalid params', :values
+      end
     end
   end
 

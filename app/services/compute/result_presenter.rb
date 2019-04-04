@@ -6,8 +6,8 @@ module Compute
       @result = result
     end
 
-    def to_json
-      { request_id: request_id, timestamp: timestamp, title: 'Result', result: result }
+    def to_json(options = nil)
+      { request_id: request_id, timestamp: timestamp, title: 'Result', result: result }.to_json
     end
 
     private

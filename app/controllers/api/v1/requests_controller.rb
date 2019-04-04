@@ -1,4 +1,5 @@
 class Api::V1::RequestsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   # As application should respond to json request, I decided to add API V1 namespace to controller,
   # because usually json is used in API and it wil lallow better flexibility
 
@@ -9,7 +10,9 @@ class Api::V1::RequestsController < ApplicationController
   def compute
     result = Compute::ComputeService.new(@compute_params[:data]).compute
 
-    render json: ResultPresenter.new(timestamp: @compute_params[:timestamp], result: result, )
+    render json: Compute::ResultPresenter.new(request_id: @compute_params[:request_id],
+                                              timestamp: @compute_params[:timestamp],
+                                              result: result, )
   end
 
   private
